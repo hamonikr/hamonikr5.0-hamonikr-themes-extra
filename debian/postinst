@@ -12,11 +12,10 @@ case "$1" in
       RUID=$(who | awk 'FNR == 1 {print $1}')
       RUSER_UID=$(id -u ${RUID})
       
-      if [ ! -f /home/${RUID}/.config/autostart/plank.desktop ] ; then
-        cp /etc/skel/.config/autostart/plank.desktop /home/${RUID}/.config/autostart/
-      fi
-      
-      if [ "$RUID" != "root" ] ; then
+      if [ "$RUID" != "" ] ; then
+        if [ ! -f /home/${RUID}/.config/autostart/plank.desktop ] ; then
+          cp /etc/skel/.config/autostart/plank.desktop /home/${RUID}/.config/autostart/
+        fi
         sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" hamonikr-theme-start jin
       fi
 
