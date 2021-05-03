@@ -79,13 +79,6 @@ case $1 in
             gsettings set x.dm.slick-greeter background "file:////usr/share/backgrounds/hamonikr/bg4.jpg"
         fi
 
-        # kill plank
-        if pidof plank | grep [0-9] > /dev/null
-        then
-            echo "kill plank program"
-            killall plank
-        fi
-
         # plank dockitems Index
         gsettings set net.launchpad.plank.dock.settings:/net/launchpad/plank/docks/dock1/ dock-items "['desktop.dockitem', 'nemo.dockitem', 'naver-whale.dockitem', 'org.gnome.Terminal.dockitem', 'xed.dockitem', 'code.dockitem', 'libreoffice-writer.dockitem', 'libreoffice-impress.dockitem', 'libreoffice-calc.dockitem', 'com.github.maoschanz.drawing.dockitem', 'io.github.celluloid_player.Celluloid.dockitem', 'rhythmbox.dockitem', 'stacer.dockitem', 'mintinstall.dockitem', 'trash.dockitem', 'cinnamon-settings.dockitem', 'system-shutdown.dockitem']"
 
@@ -102,10 +95,6 @@ case $1 in
             rm -f /home/$USER/.config/plank/dock1/launchers/*
             cp -af /etc/skel/.config/autostart/plank.desktop /home/$USER/.config/autostart/plank.desktop
             cp -af /etc/skel/.config/plank /home/$USER/.config/
-
-            # start plank after setup
-            plank &
-            disown
         fi
 
         # backup current desktop settings
