@@ -17,6 +17,11 @@ case "$1" in
           cp /etc/skel/.config/autostart/plank.desktop /home/${RUID}/.config/autostart/
         fi
         sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" hamonikr-theme-start jin
+
+        # default_dconf.done 생성
+        if [ ! -f /home/${RUID}/.hamonikr/default_dconf.done ]; then
+          echo "" | tee /home/${RUID}/.hamonikr/default_dconf.done
+        fi
       fi
 
       gtk-update-icon-cache || true

@@ -12,18 +12,18 @@ mkdir -p /home/$RUID/.hamonikr/themes/save
 mkdir -p /home/$RUID/.hamonikr/themes/done
 
 case $1 in
-    jin )
+    hanla )
         echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/themes/log/${0##*/}.log
         
         if [ -f /home/$RUID/.config/autostart/hamonikr-theme.desktop ] ; then
             SELECT=`cat /home/$RUID/.config/autostart/hamonikr-theme.desktop | grep Exec`
-            sed -i "s/$SELECT/Exec=hamonikr-theme-start jin/g" /home/$RUID/.config/autostart/hamonikr-theme.desktop
+            sed -i "s/$SELECT/Exec=hamonikr-theme-start hanla/g" /home/$RUID/.config/autostart/hamonikr-theme.desktop
         fi        
 
         touch /home/$RUID/.hamonikr/themes/done/hamonikr-theme-start.done
         THEME=`cat $HOME/.hamonikr/themes/done/hamonikr-theme-start.done`
 
-    if [ "$THEME" == jin ] ; then
+    if [ "$THEME" == hanla ] ; then
         exit 0
     else
         # icon, gtk theme, cursor setting
@@ -73,10 +73,10 @@ case $1 in
 
         # 바탕화면, greeter 배경화면
         if [ -d "/usr/share/backgrounds/hamonikr" ] ; then
-            gsettings set org.cinnamon.desktop.background picture-uri "file:////usr/share/backgrounds/hamonikr/bg4.jpg"
-            gsettings set org.gnome.desktop.background picture-uri "file:////usr/share/backgrounds/hamonikr/bg4.jpg"
-            gsettings set org.mate.background picture-filename "file:////usr/share/backgrounds/hamonikr/bg4.jpg"               
-            gsettings set x.dm.slick-greeter background "file:////usr/share/backgrounds/hamonikr/bg4.jpg"
+            gsettings set org.cinnamon.desktop.background picture-uri "file:////usr/share/backgrounds/hamonikr/default_background.jpg"
+            gsettings set org.gnome.desktop.background picture-uri "file:////usr/share/backgrounds/hamonikr/default_background.jpg"
+            gsettings set org.mate.background picture-filename "file:////usr/share/backgrounds/hamonikr/default_backgroundjpg"
+            gsettings set x.dm.slick-greeter background "file:////usr/share/backgrounds/hamonikr/default_background.jpg"
         fi
 
         # plank dockitems Index
@@ -120,9 +120,9 @@ case $1 in
             rm /home/${RUID}/.config/autostart/plank.desktop
         fi
         
-        if [ -f "/home/$RUID/.hamonikr/themes/save/hamonikr-theme-backup-jin.dconf" ] ; then
+        if [ -f "/home/$RUID/.hamonikr/themes/save/hamonikr-theme-backup-hanla.dconf" ] ; then
             echo "Restore previous environment..."
-            rm -f /home/$RUID/.hamonikr/themes/save/hamonikr-theme-backup-jin.dconf
+            rm -f /home/$RUID/.hamonikr/themes/save/hamonikr-theme-backup-hanla.dconf
         fi
 
         if [ -f "/home/$RUID/.hamonikr/themes/done/hamonikr-theme-start.done" ] ; then
@@ -130,10 +130,16 @@ case $1 in
             rm -f /home/$RUID/.hamonikr/themes/done/hamonikr-theme-start.done
         fi    
 
+        # default_dconf.done 삭제
+        if [ -f "/home/$RUID/.hamonikr/default_dconf.done" ] ; then 
+            rm -f /home/$RUID/.hamonikr/default_dconf.done
+        fi
+
         if [ -f "/home/$RUID/.hamonikr/${0##*/}.log" ] ; then
             echo "delete program log files..."    
             rm -f /home/$RUID/.hamonikr/themes/log/${0##*/}.log
         fi
+        
 
         hamonikr-theme-start default
     exit 0

@@ -1,16 +1,29 @@
-hamonikr-themes-extra (1.0.7) public; urgency=medium
+hamonikr-themes-extra (1.0.9) hanla; urgency=medium
+
+  * change jin to hanla
+  * change default_background.jpg
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 17 Jun 2021 17:42:06 +0900
+
+hamonikr-themes-extra (1.0.8) hanla; urgency=medium
+
+  * if install package then make default_deconf.done file
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 17 May 2021 11:33:56 +0900
+
+hamonikr-themes-extra (1.0.7) hanla; urgency=medium
 
   * delete kill plank & start plank process
 
  -- HamoniKR <pkg@hamonikr.org>  Thu, 15 Apr 2021 16:42:17 +0900
 
-hamonikr-themes-extra (1.0.6) public; urgency=medium
+hamonikr-themes-extra (1.0.6) hanla; urgency=medium
 
   * fix postinst
 
  -- HamoniKR <pkg@hamonikr.org>  Thu, 15 Apr 2021 15:19:40 +0900
 
-hamonikr-themes-extra (1.0.5) public; urgency=medium
+hamonikr-themes-extra (1.0.5) hanla; urgency=medium
 
   * Remove Package > Change Default Theme
   * Kill plank & Start plank after setup
@@ -18,7 +31,7 @@ hamonikr-themes-extra (1.0.5) public; urgency=medium
 
  -- HamoniKR <pkg@hamonikr.org>  Thu, 15 Apr 2021 01:32:32 +0900
 
-hamonikr-themes-extra (1.0.4) public; urgency=medium
+hamonikr-themes-extra (1.0.4) hanla; urgency=medium
 
   * Change /usr/local/bin/hamonikr-theme-extra code
   * Change /etc/xdg/autostart/plank.desktop > /etc/skel/.config/autostart
@@ -26,20 +39,20 @@ hamonikr-themes-extra (1.0.4) public; urgency=medium
 
  -- HamoniKR <pkg@hamonikr.org>  Wed, 14 Apr 2021 09:43:33 +0900
 
-hamonikr-themes-extra (1.0.3) public; urgency=medium
+hamonikr-themes-extra (1.0.3) hanla; urgency=medium
 
   * add Xremove code in hamonikr-plank-theme-start
 
  -- HamoniKR <pkg@hamonikr.org>  Wed, 14 Apr 2021 00:53:56 +0900
 
-hamonikr-themes-extra (1.0.2) public; urgency=medium
+hamonikr-themes-extra (1.0.2) hanla; urgency=medium
 
   * if not directory /home/$USER/.config/plank > make directory & cp plank file
 
  -- HamoniKR <pkg@hamonikr.org>  Mon, 12 Apr 2021 15:55:59 +0900
 
 
-hamonikr-themes-extra (1.0.1) public; urgency=medium
+hamonikr-themes-extra (1.0.1) hanla; urgency=medium
 
   * fix background location
   * fix hamonikr-themes-start.done location
@@ -47,9 +60,9 @@ hamonikr-themes-extra (1.0.1) public; urgency=medium
  -- HamoniKR <pkg@hamonikr.org>  Mon, 12 Apr 2021 12:55:53 +0900
 
 
-hamonikr-themes-extra (1.0.0) public; urgency=medium
+hamonikr-themes-extra (1.0.0) hanla; urgency=medium
 
-  * Initial release for hamonikr 5.0 Public
+  * Initial release for hamonikr 5.0 hanla
      - first commit hamonikr-themes2
 
  -- HamoniKR <pkg@hamonikr.org>  Mon, 12 Apr 2021 11:51:33 +0900
